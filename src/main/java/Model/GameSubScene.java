@@ -14,7 +14,7 @@ public class GameSubScene extends SubScene{
 
 	private Boolean isHidden;
 	
-	//Constructor of all Subscenes, the height and width ids define inside the method
+	//Constructor of all SubScenes, the height and width ids define inside the method
 	public GameSubScene() {
 		super(new AnchorPane(), 400, 450);
 		prefWidth(400);
@@ -29,8 +29,8 @@ public class GameSubScene extends SubScene{
 		setLayoutY(100);
 	}
 	
-	//Creates the transitions to change between subscenes
-	public void moveSubscene() {
+	//Creates the transitions to change between subScenes
+	public void moveSubScene() {
 		TranslateTransition transition = new TranslateTransition();
 		transition.setDuration(Duration.seconds(0.3));
 		transition.setNode(this);

@@ -4,8 +4,8 @@ import Model.Obstacle;
 import javafx.scene.image.ImageView;
 
 public class Physics {
-	static final int SPEED_Y = 1;
-	static final int SPEED_X = 1;
+	static final int SPEED_Y = 2;
+	static final int SPEED_X = 2;
 	static final int STARTS_X_SINGLEPLAYER = 640;
 	static final int STARTS_Y_SINGLEPLAYER = 400;
 	static final int STARTS_X_MULTIPLAYER_PLAYER_A = 640;

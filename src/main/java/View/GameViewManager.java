@@ -129,12 +129,12 @@ public class GameViewManager {
 		gameStage.show();
 	}
 
-	//Method use to initialize the background and starts the loop for the singleplayer game
-	public void createNewGameSingleplayer(Stage menuStage, CARS carA) {
+	//Method use to initialize the background and starts the loop for the single player game
+	public void createNewGameSinglePlayer(Stage menuStage, CARS carA) {
 		this.menuStage = menuStage;
 		this.menuStage.hide();
-		createCarsSingleplayer(carA);
-		createGameLoopSingleplayer();
+		createCarsSinglePlayer(carA);
+		createGameLoopSinglePlayer();
 		createBackgroundSinglePlayer();
 		gameStage.show();
 	}
@@ -151,9 +151,9 @@ public class GameViewManager {
 		initializeCarsObstaclesMultiPlayerRightSide();
 	}
 
-	//Method use to create the car that the player will use on the singleplayer mode
+	//Method use to create the car that the player will use on the single player mode
 	//The method also initialize the limits of the map and starts the initialize the obstacles on the game
-	private void createCarsSingleplayer(CARS carA) {
+	private void createCarsSinglePlayer(CARS carA) {
 		car1 = new ImageView(carA.getUrl());
 		gamePane.getChildren().add(car1);
 		initializeLimitsSinglePlayer();
@@ -185,7 +185,7 @@ public class GameViewManager {
 
 	//Method in charge of update each position of all the objects on the screen, this is updated each frame
 	//The method also checks for collisions with cars or with limits
-	private void createGameLoopSingleplayer() {
+	private void createGameLoopSinglePlayer() {
 		gameTimer = new AnimationTimer() {
 
 			@Override
@@ -203,7 +203,7 @@ public class GameViewManager {
 		gameTimer.start();
 	}
 
-	//Method to create the limits for the singleplayer mode
+	//Method to create the limits for the single player mode
 	public void initializeLimitsSinglePlayer() {
 		obstacleTop = new Obstacle(0,-40,1000,50);
 		obstacleTop.setFill(Color.BLACK);
@@ -251,7 +251,7 @@ public class GameViewManager {
         gamePane.getChildren().add(obstacleMiddle);
 	}
 
-	//Method to show the player on the singleplayer mode
+	//Method to show the player on the single player mode
 	protected void showPlayerSinglePlayer(ImageView player, Physics playerPhysics) {
 		player.setLayoutX(playerPhysics.positionXSinglePlayer);
 		player.setLayoutY(playerPhysics.positionYSinglePlayer);
@@ -292,7 +292,7 @@ public class GameViewManager {
 	//Method to move the obstacle on each frame, all the obstacles moves on the same direction on the same speed
 	private void updateObstacles(Obstacle[] obstacles) {
 		for(Obstacle current : obstacles) {
-			current.setLayoutY(current.getLayoutY()+1);
+			current.setLayoutY(current.getLayoutY()+2);
 		}
 	}
 
@@ -335,7 +335,7 @@ public class GameViewManager {
 		}
 	}
 
-	//Method to check the collisions with the limits on singleplayer mode, and move the player to the correct position
+	//Method to check the collisions with the limits on single player mode, and move the player to the correct position
 	private void checkCollisionLimitsSinglePlayer() {
 
 		if(car1Physics.collideRectangle(obstacleLeft, car1)) {
@@ -408,7 +408,7 @@ public class GameViewManager {
 		checkCollisionBetweenObstacles(carsObstaclesMultiPlayerLeftSide);
 	}
 
-	//Method to initialize the obstacles in the singleplayer mode
+	//Method to initialize the obstacles in the single player mode
 	private void initializeCarsObstaclesSinglePlayer() {
 
 		Random random = new Random();
@@ -476,7 +476,7 @@ public class GameViewManager {
         }
 	}
 
-	//Method to generate a random position for the X axis on the singleplayer
+	//Method to generate a random position for the X axis on the single player
 	private int generateRandomPositionXSinglePlayer() {
 		Random random = new Random();
 		int position = 0;
@@ -658,7 +658,7 @@ public class GameViewManager {
 		gamePane.setBackground(new Background(bckg));
 	}
 
-	//Method to set the background of the singleplayer mode
+	//Method to set the background of the single player mode
 	private void createBackgroundSinglePlayer() {
 		Image bckgImage = new Image("file:Resources/Background/Background_SinglePlayer.png", 1000, 800, false, true);
 		BackgroundImage bckg = new BackgroundImage(bckgImage, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, null);

@@ -52,7 +52,7 @@ public class ViewManager {
 		mainStage.setScene(mainScene);
 		
 		initializeMinimizeCloseSoundButtons();
-		createSubscenes();
+		createSubScenes();
 		createButtons();
 		createBackground();
 		createLogo();
@@ -61,7 +61,7 @@ public class ViewManager {
 	}
 	
 	//Initialize all SubScene
-	private void createSubscenes(){
+	private void createSubScenes(){
 		createSingleplayerSubScene();
 		createMultiplayerSubScene();
 		createInfoSubScene();
@@ -189,9 +189,9 @@ public class ViewManager {
 	//Method to show only the subscene selected by the player
 	private void showSubscene(GameSubScene scene) {
 		if(sceneToHide != null) {
-			sceneToHide.moveSubscene();
+			sceneToHide.moveSubScene();
 		}
-		scene.moveSubscene();
+		scene.moveSubScene();
 		sceneToHide = scene;
 	}
 	
@@ -303,7 +303,7 @@ public class ViewManager {
 		button.setOnAction(arg0 -> {
 			if(carSP != null ) {
 				GameViewManager gameManager = new GameViewManager();
-				gameManager.createNewGameSingleplayer(mainStage, carSP);
+				gameManager.createNewGameSinglePlayer(mainStage, carSP);
 				mediaPlayer.stop();
 			}
 		});
@@ -414,7 +414,7 @@ public class ViewManager {
 		return sortedList;
 	}
 
-	//Creates the score table that appears on the score subscenes
+	//Creates the score table that appears on the score SubScenes
 	public void createScoresTable(){
 		List<Data> scores = sortList(readScores());
 

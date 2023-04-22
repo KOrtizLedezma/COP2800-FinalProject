@@ -14,7 +14,7 @@ public class main extends Application {
             ViewManager manager = new ViewManager();
             primaryStage = manager.getMainStage();
             primaryStage.setResizable(false);
-            primaryStage.setTitle("MDC FINAL PROYECT");
+            primaryStage.setTitle("MDC FINAL PROJECT");
             primaryStage.initStyle(StageStyle.UNDECORATED);
             primaryStage.show();
         } catch(Exception e) {
