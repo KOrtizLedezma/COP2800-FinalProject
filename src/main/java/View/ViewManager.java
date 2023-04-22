@@ -445,6 +445,7 @@ public class ViewManager {
 		Media media = new Media(new File(musicFilePath).toURI().toString());
 		mediaPlayer = new MediaPlayer(media);
 		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+		mediaPlayer.setVolume(0.05);
 		mediaPlayer.play();
 	}
 }
